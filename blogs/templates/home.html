@@ -1,9 +1,15 @@
-<h1>Hi!</h1>
+{% extends 'base.html' %}
 
-{% for post in object_list  %}
-    <div class="post-preview">
-        <h1>{{ post.title }}</h1>
-        <h2>{{ post.pub_date }}</h2>
-        <p>{{ post.body }}</p>
+{% block content %}
+
+    <div class="post-list">
+        {% for post in object_list  %}
+            <div class="post-preview">
+                <h1>{{ post.title }}</h1>
+                <h2>{{ post.pub_date }}</h2>
+                <p>{{ post.body }}</p>
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+/* base.html styling */
+html{
+    color: #181818;
+    background-color: #f9f9f9;
+}
+body{
+    margin: 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #01937C;
+}
+.navbar .navlinks{
+    text-decoration: none;
+}
+
+/* home.html styling */
+.post-list .post-preview{
+    padding: 10px;
+}
