@@ -13,12 +13,19 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #01937C;
+}
+.navbar h1{
+    font-size: 30px;
+    margin: 0;
 }
 .navbar .navlinks{
     text-decoration: none;
     color: #181818;
+}
+footer p{
+    text-align: center;
 }
 
 /* home.html styling */
@@ -26,4 +33,60 @@ body{
     padding: 10px;
     margin: 12px;
     background-color: #FAF1E6;
+}
+.post-preview h1, .post-preview h2{
+    margin: 0;
+}
+.post-title-link{
+    text-decoration: none;
+    color: #181818;
+}
+.post-preview h2{
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* post_detail.html styling */
+.post-admin-links{
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* add_post.html styling */
+.form-div{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.form-div h2{
+    margin-top: 30px;
+}
+.post-form input, .post-form select, .post-form textarea{
+    border: 1px solid #FFC074;
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+.post-form label{
+    display: block;
+}
+.post-form textarea{
+    resize: none;
+}
+.button-div{
+    text-align: center;
+}
+.post-form button, .delete-form input{
+    background-color: #01937C;
+    border: none;
+    padding: 8px;
+    color: #FAF1E6;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+/* delete_post.html styling */
+.delete-form{
+    text-align: center;
 }

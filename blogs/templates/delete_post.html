@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
+{% block title %} Turf | Delete Post {% endblock %}
 
 {% block content %}
 
     <div class="post-list">
-        {% for post in object_list  %}
+            <h2>Delete this post?</h2>
             <div class="post-preview">
-                <h1><a href="{% url 'post-detail' post.pk %}" class="post-title-link">{{ post.title }}</a></h1>
+                <h1>{{ post.title }}</h1>
                 <h2>By {{ user.first_name }} {{ user.last_name }} - {{ post.pub_date|date:"n/d/y g:i A" }} </h2>
                 <p>{{ post.body }}</p>
             </div>
-        {% endfor %}
+            <form class="delete-form" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Delete Post">
+            </form>
+            
     </div>
     
 {% endblock %}
