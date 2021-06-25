@@ -6,7 +6,7 @@
         {% for post in object_list  %}
             <div class="post-preview">
                 <h1>{{ post.title }}</h1>
-                <h2>{{ post.pub_date }}</h2>
+                <h2>{{ post.pub_date|date:"n/d/y g:i A" }} </h2>
                 <p>{{ post.body }}</p>
             </div>
         {% endfor %}
