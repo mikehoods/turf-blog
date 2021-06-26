@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Turf | Login {% endblock %}
+
+{% block content %}
+<div class="form-div">
+    <h2>Login</h2>
+    <form class="login-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="button-div">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
