@@ -2,15 +2,21 @@
 {% block title %}Turf | Add Post {% endblock %}
 
 {% block content %}
-<div class="form-div">
-    <h2>Add New Post</h2>
-    <form class="post-form" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div class="button-div">
-            <button type="submit">Add Post</button>
-        </div>
-    </form>
-</div>
+
+{% if user.is_authenticated %}
+    <div class="form-div">
+        <h2>Add New Post</h2>
+        <form class="post-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="button-div">
+                <button type="submit">Add Post</button>
+            </div>
+        </form>
+    </div>
+{% else %}
+    <h1>Unauthorized</h1>
+    <h2>You must be logged in to do this.</h2>
+{% endif %}
 
 {% endblock %}
