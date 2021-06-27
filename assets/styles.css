@@ -61,14 +61,14 @@ footer p{
 .form-div h2{
     margin-top: 30px;
 }
-.post-form input, .post-form select, .post-form textarea{
+.post-form input, .post-form select, .post-form textarea, .auth-form input{
     border: 1px solid #FFC074;
     width: 100%;
     padding: 6px;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
-.post-form label{
+.post-form label, .auth-form label{
     display: block;
 }
 .post-form textarea{
@@ -77,13 +77,16 @@ footer p{
 .button-div{
     text-align: center;
 }
-.post-form button, .delete-form input{
+.post-form button, .delete-form input, .auth-form button{
     background-color: #01937C;
     border: none;
     padding: 8px;
     color: #FAF1E6;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
+}
+.helptext{
+    display: block;
 }
 
 /* delete_post.html styling */
