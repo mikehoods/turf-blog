@@ -28,6 +28,11 @@ footer p{
     text-align: center;
 }
 
+/* unauthorized routes styling */
+.unauthorized{
+    margin-left: 30px;
+}
+
 /* home.html styling */
 .post-list .post-preview{
     padding: 10px;

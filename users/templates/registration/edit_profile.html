@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}Turf | Edit Post {% endblock %}
+{% block title %}Turf | Edit Profile {% endblock %}
 
 {% block content %}
 
 {% if user.is_authenticated %}
     <div class="form-div">
-        <h2>Edit Post</h2>
-        <form class="post-form" method="POST">
+        <h2>Edit Profile</h2>
+        <form class="user-form" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="button-div">
-                <button type="submit">Edit Post</button>
+                <button type="submit">Edit Profile</button>
             </div>
         </form>
     </div>

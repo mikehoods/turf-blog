@@ -16,6 +16,7 @@
                 
                 {% if user.is_authenticated %}
                     <a href="{% url 'add-post' %}" class="navlinks">Add Post</a>
+                    <a href="{% url 'edit-profile' user.profile.id %}" class="navlinks">Edit Profile</a>
                     <a href="{% url 'logout' %}" class="navlinks">Logout</a>
                 {% else %}
                     <a href="{% url 'login' %}" class="navlinks">Login</a>
