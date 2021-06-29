@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from . models import Post
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
@@ -19,10 +20,11 @@ class HomeView(ListView):
     template_name = 'home.html'
     ordering = ['-pub_date']
 
-class AddPostView(CreateView):
+class AddPostView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'add_post.html'
     fields = ('title', 'body')
+    login_url = '/users/login/'
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
@@ -33,12 +35,14 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
 
-class EditPostView(UpdateView):
+class EditPostView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'edit_post.html'
+    login_url = '/users/login/'
     fields = ('title', 'body')
 
-class DeletePostView(DeleteView):
+class DeletePostView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'delete_post.html'
+    login_url = '/users/login/'
     success_url = reverse_lazy('home')

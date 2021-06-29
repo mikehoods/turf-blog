@@ -3,7 +3,6 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
     <div class="form-div">
         <h2>Edit Profile</h2>
         <form class="user-form" method="POST" enctype="multipart/form-data">
@@ -15,11 +14,5 @@
             </div>
         </form>
     </div>
-{% else %}
-    <div class="unauthorized">
-        <h1>Unauthorized</h1>
-        <h2>You must be logged in to do this.</h2>
-    </div> 
-{% endif %}
 
 {% endblock %}

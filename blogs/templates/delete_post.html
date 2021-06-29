@@ -3,7 +3,6 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
     <div class="post-list">
         <h2 class="delete-h2">Delete this post?</h2>
         <div class="post-preview">
@@ -16,11 +15,5 @@
             <input type="submit" value="Delete Post">
         </form>       
     </div>
-{% else %}
-    <div class="unauthorized">
-        <h1>Unauthorized</h1>
-        <h2>You must be logged in to do this.</h2>
-    </div> 
-{% endif %}
  
 {% endblock %}
