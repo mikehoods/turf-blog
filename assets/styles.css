@@ -103,7 +103,7 @@ footer p{
 .form-div h2{
     margin-top: 30px;
 }
-.post-form input, .post-form select, .post-form textarea, .auth-form input{
+.post-form input, .post-form select, .post-form textarea, .auth-form input, .user-form input, .user-form textarea, .user-form select{
     border: 1px solid #FFC074;
     width: 100%;
     padding: 6px;
@@ -119,7 +119,7 @@ footer p{
 .button-div{
     text-align: center;
 }
-.post-form button, .delete-form input, .auth-form button{
+.post-form button, .delete-form input, .auth-form button, .user-form button{
     background-color: #01937C;
     border: none;
     padding: 8px;

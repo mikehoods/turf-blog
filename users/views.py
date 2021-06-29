@@ -13,7 +13,7 @@ class EditProfileView(UpdateView):
     model = Profile
     template_name = 'registration/edit_profile.html'
     success_url = reverse_lazy('home')
-    fields = '__all__'
+    fields = ('bio', 'profile_pic', 'website_url', 'medium_url')
 
 class ShowProfileView(DetailView):
     model = Profile

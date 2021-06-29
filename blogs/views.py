@@ -22,8 +22,12 @@ class HomeView(ListView):
 class AddPostView(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = ('title', 'author', 'body')
+    fields = ('title', 'body')
     success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 class PostDetailView(DetailView):
     model = Post
