@@ -19,6 +19,7 @@ body{
 .navbar h1{
     font-size: 30px;
     margin: 0;
+    font-weight: 600;
 }
 .navbar .navlinks{
     text-decoration: none;
@@ -46,6 +47,9 @@ footer p{
     text-decoration: none;
     color: #181818;
 }
+.post-preview h1{
+    font-weight: 600;
+}
 .post-preview h2{
     font-weight: 300;
     font-size: 14px;
@@ -56,6 +60,17 @@ footer p{
 .post-admin-links{
     text-decoration: none;
     font-size: 12px;
+    color: #FFC074;
+}
+.like-form button{
+    background-color: #01937C;
+    border: none;
+    padding: 8px;
+    color: #FAF1E6;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    border-radius: 12px;
+
 }
 /* author info styling */
 .author-info{
@@ -73,6 +88,12 @@ footer p{
     max-height: 45px;
     border-radius: 50%;
     margin-right: 10px;
+}
+.author-links{
+    text-decoration: none;
+    font-size: 12px;
+    color: #FFC074;
+    font-weight: 500;
 }
 /* add_post.html styling */
 .form-div{

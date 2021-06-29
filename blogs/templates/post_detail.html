@@ -12,6 +12,27 @@
                 <a href="{% url 'edit-post' post.id %}" class="post-admin-links">Edit</a> | <a href="{% url 'delete-post' post.id %}" class="post-admin-links">Delete</a>
             {% endif %}
             <p>{{ post.body }}</p>
+            <form action="{% url 'like-post' post.pk %}" method='POST' class="like-form">
+                {% csrf_token %}
+                <button
+                    type="submit"
+                    name="post_id"
+                    value="{{ post.id }}"
+                    {% if user in post.likes.all %}
+                        class="liked"
+                    {% else %}
+                        class="unliked"
+                    {% endif %}
+                >
+                    {{ post.total_likes }}
+                    {% if post.total_likes == 1 %}
+                        Like
+                    {% else %}
+                        Likes
+                    {% endif %}
+                </button>
+            </form>
+            
         </div>
     </div>
 
@@ -25,7 +46,13 @@
         </div>
         <div class="author-text-div">
             <h2>{{ post.author.first_name }} {{ post.author.last_name }}</h2>
-            <a href="{% url 'show-profile' post.author.profile.id %}">profile</a>
+            <a href="{% url 'show-profile' post.author.profile.id %}" class="author-links">Profile</a> 
+            {% if post.author.profile.website_url %}
+             | <a href="{{ post.author.profile.website_url }}" class="author-links" target="_blank">Website</a>
+            {% endif %}
+            {% if post.author.profile.medium_url %}
+             | <a href="{{ post.author.profile.medium_url }}" class="author-links" target="_blank">Medium</a>
+            {% endif %}
             <p>{{ post.author.profile.bio }}</p>
         </div>
     </div>

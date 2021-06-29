@@ -14,6 +14,13 @@
     </div>
     <div class="author-text-div">
         <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+        {% if profile.website_url %}
+             <a href="{{ profile.website_url }}" class="author-links" target="_blank">Website</a>
+            {% endif %}
+            {% if profile.medium_url %}
+             | <a href="{{ profile.medium_url }}" class="author-links" target="_blank">Medium</a>
+            {% endif %}
+            <p>{{ post.author.profile.bio }}</p>
         <p>{{ profile.bio }}</p>
     </div>
 </div>
