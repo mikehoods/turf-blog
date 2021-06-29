@@ -6,8 +6,9 @@
 {% if user.is_authenticated %}
     <div class="form-div">
         <h2>Edit Profile</h2>
-        <form class="user-form" method="POST">
+        <form class="user-form" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            {{ form.media }}
             {{ form.as_p }}
             <div class="button-div">
                 <button type="submit">Edit Profile</button>

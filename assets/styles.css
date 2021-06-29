@@ -57,7 +57,23 @@ footer p{
     text-decoration: none;
     font-size: 12px;
 }
-
+/* author info styling */
+.author-info{
+    margin: 12px;
+    padding: 10px;
+    background-color: #FAF1E6;
+    display: flex;
+    align-items: flex-start;
+}
+.author-text-div h2{
+    margin: 0;
+}
+.profile-pic{
+    max-width: 45px;
+    max-height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 /* add_post.html styling */
 .form-div{
     max-width: 800px;

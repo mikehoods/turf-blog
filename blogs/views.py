@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from . models import Post
 from django.urls import reverse_lazy
-from users.models import Profile
 
 class HomeView(ListView):
     model = Post
