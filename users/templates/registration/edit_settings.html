@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Turf | Edit Settings {% endblock %}
+
+{% block content %}
+
+    <div class="form-div">
+        <h2>Edit Settings</h2>
+        <form class="user-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <div class="button-div">
+                <button type="submit">Edit Settings</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
