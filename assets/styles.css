@@ -38,10 +38,17 @@ footer p{
     border: none;
     outline: none;
     color: #f9f9f9;
-    padding: 14px 16px;
+    padding: 8px 12px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    display: flex;
+    align-items: center;
+    min-width: 160px;
+    
+}
+.dropbtn i{
+    padding-left: 6px;
 }
 .dropdown:hover .dropbtn {
     background-color: #B6C867;
@@ -50,9 +57,9 @@ footer p{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    min-width: 160px;
 }
 .dropdown-content a {
     float: none;
@@ -124,8 +131,8 @@ footer p{
     margin: 0;
 }
 .profile-pic{
-    max-width: 45px;
-    max-height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -178,3 +185,10 @@ footer p{
 .delete-h2{
     margin-left: 20px;
 }
+
+/* mobile styling */
+@media only screen and (max-width: 600px) {
+    .form-div{
+        margin: 12px;
+    }
+  }

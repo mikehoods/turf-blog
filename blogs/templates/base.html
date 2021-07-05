@@ -18,21 +18,32 @@
                 
                 {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <button class="dropbtn">{{ user.first_name }} {{ user.last_name }} 
-                      <i class="fa fa-caret-down"></i>
+                    <button class="dropbtn">
+                        <img src="{{ user.profile.profile_pic.url }}" class="profile-pic">
+                        {{ user.first_name }} {{ user.last_name }} 
+                        <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
                         <a href="{% url 'add-post' %}">Add Post</a>
                         {% if user.profile.id %}
-                            <a href="{% url 'show-profile' user.profile.id %}">Contributer Profile</a>
-                            <a href="{% url 'edit-profile' user.profile.id %}">Edit Profile Page</a>
+                            <a href="{% url 'show-profile' user.profile.id %}">Author Profile</a>
+                            <a href="{% url 'edit-profile' user.profile.id %}">Edit Profile</a>
                         {% endif %}
                         <a href="{% url 'logout' %}">Logout</a>
                     </div>
                 </div>
                 {% else %}
-                    <a href="{% url 'login' %}" class="navlinks">Login</a>
-                    <a href="{% url 'signup' %}" class="navlinks">Signup</a>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <img src="{% static 'images/default_profile_pic.png' %}" class="profile-pic">
+                        Guest 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'login' %}" class="navlinks">Login</a>
+                        <a href="{% url 'signup' %}" class="navlinks">Signup</a>
+                    </div>
+                </div>
                 {% endif %}
             </div>
         </nav>
